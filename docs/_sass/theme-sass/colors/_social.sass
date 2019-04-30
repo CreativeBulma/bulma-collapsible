@@ -1,0 +1,48 @@
+// 2.3.1. Setup your Custom Colors
+$blogger: #fb8f3d
+$blogger-invert: findColorInvert($blogger)
+$dribbble: #ea4c89
+$dribbble-invert: findColorInvert($dribbble)
+$facebook: #3b5998
+$facebook-invert: findColorInvert($facebook)
+$flickr: #ff0084
+$flickr-invert: findColorInvert($flickr)
+$forrst: #5B9A68
+$forrst-invert: findColorInvert($forrst)
+$foursquare: #0072b1
+$foursquare-invert: findColorInvert($foursquare)
+$github: #5f5f5f
+$github-invert: findColorInvert($github)
+$gplus: #dd4b39
+$gplus-invert: findColorInvert($gplus)
+$instagram: #bc2a8d
+$instagram-invert: findColorInvert($instagram)
+$linkedin: #007bb6
+$linkedin-invert: findColorInvert($linkedin)
+$pinterest: #cb2027
+$pinterest-invert: findColorInvert($pinterest)
+$quora: #a82400
+$quora-invert: findColorInvert($quora)
+$soundcloud: #ff3a00
+$soundcloud-invert: findColorInvert($soundcloud)
+$stumbleupon: #EB4823
+$stumbleupon-invert: findColorInvert($stumbleupon)
+$tumblr: #32506d
+$tumblr-invert: findColorInvert($tumblr)
+$twitter: #00aced
+$twitter-invert: findColorInvert($twitter)
+$vimeo: #1ab7ea
+$vimeo-invert: findColorInvert($vimeo)
+$vk: #45668e
+$vk-invert: findColorInvert($vk)
+$wordpress: #21759b
+$wordpress-invert: findColorInvert($wordpress)
+$yahoo: #7B0099
+$yahoo-invert: findColorInvert($yahoo)
+$youtube: #bb0000
+$youtube-invert: findColorInvert($youtube)
+
+// 2.3.2. Add new color variables to the color map.
+@import "node_modules/bulma/sass/utilities/derived-variables"
+$socialColors: ("blogger": ($blogger, $blogger-invert), "dribbble": ($dribbble, $dribbble-invert), "facebook": ($facebook, $facebook-invert), "flickr": ($flickr, $flickr-invert), "forrst": ($forrst, $forrst-invert), "foursquare": ($foursquare, $foursquare-invert), "github": ($github, $github-invert), "gplus": ($gplus, $gplus-invert), "instagram": ($instagram, $instagram-invert), "linkedin": ($linkedin, $linkedin-invert), "pinterest": ($pinterest, $pinterest-invert), "quora": ($quora, $quora-invert), "soundcloud": ($soundcloud, $soundcloud-invert), "stumbleupon": ($stumbleupon, $stumbleupon-invert), "tumblr": ($tumblr, $tumblr-invert), "twiter": ($twitter, $twitter-invert), "vimeo": ($vimeo, $vimeo-invert), "vk": ($vk, $vk-invert), "wordpress": ($wordpress, $wordpress-invert), "yahoo": ($yahoo, $yahoo-invert), "youtube": ($youtube, $youtube-invert));
+$colors: map-merge($colors, $socialColors)

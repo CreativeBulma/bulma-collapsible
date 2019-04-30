@@ -1,0 +1,9 @@
+{
+  "title": "bulmaCollapsible: Make any Bulma element collapsible with ease",
+  "description": "Bulma CSS Framework extension to make any Bulma element collapsible with ease",
+  "documentation": "/documentation",
+  "download": "https://github.com/creativebulma/bulma-collapsible/releases/download/1.0.0/bulma-collapsible-1.0.0.zip",
+  "github": "https://github.com/creativebulma/bulma-collapsible",
+  "twitter": "https://twitter.com/creativebulma",
+  "version": "1.0.0"
+}

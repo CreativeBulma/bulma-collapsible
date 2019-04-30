@@ -1,0 +1,25 @@
+/**
+ * -----------------------------------------
+ *  HACK TO APPLY RULES ONLY TO FIREFOX
+ * -----------------------------------------
+ */
+=firefox-only
+	@at-root
+		@-moz-document url-prefix()
+			&
+				@content
+
+// Retina Images
+// =retina-background-image($file, $type, $width:  auto, $height:  auto)
+//   background-repeat: no-repeat
+//   background-image: url($file + '.' + $type)
+//
+//   @media
+//     only screen and (-webkit-min-device-pixel-ratio: 2),
+//     only screen and (min--moz-device-pixel-ratio: 2),
+//     only screen and (-o-min-device-pixel-ratio: 2/1),
+//     only screen and (min-device-pixel-ratio: 2),
+//     only screen and (min-resolution: 192dpi),
+//     only screen and (min-resolution: 2dppx)
+//       background-image: url($file + '-2x.' + $type)
+//       background-size: $width $height

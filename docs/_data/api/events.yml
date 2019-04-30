@@ -1,0 +1,56 @@
+- name: before:expand
+  description: Before expanding (opening) element
+  example: |
+    // Find DOM node from ID
+    const CollapsibleElement = document.getElementById('to-collapse');
+    if (CollapsibleElement) {
+      // Instanciate Collapsible component on the node
+      new Collapsible(CollapsibleElement);
+
+      // Call method directly on Collapsible instance registered on the node
+      CollapsibleElement.bulmaCollapsible().on('before:expand', (e) => {
+        console.log('Before expand');
+      });
+    }
+- name: after:expand
+  description: After expanding (opening) element
+  example: |
+    // Find DOM node from ID
+    const CollapsibleElement = document.getElementById('to-collapse');
+    if (CollapsibleElement) {
+      // Instanciate Collapsible component on the node
+      new Collapsible(CollapsibleElement);
+
+      // Call method directly on Collapsible instance registered on the node
+      CollapsibleElement.bulmaCollapsible().on('after:expand', (e) => {
+        console.log('After expand');
+      });
+    }
+- name: before:collapse
+  description: Before collapsing (closing)) element
+  example: |
+    // Find DOM node from ID
+    const CollapsibleElement = document.getElementById('to-collapse');
+    if (CollapsibleElement) {
+      // Instanciate Collapsible component on the node
+      new Collapsible(CollapsibleElement);
+
+      // Call method directly on Collapsible instance registered on the node
+      CollapsibleElement.bulmaCollapsible().on('before:collapse', (e) => {
+        console.log('Before collapse');
+      });
+    }
+- name: after:collapse
+  description: After collapsing (closing) element
+  example: |
+    // Find DOM node from ID
+    const CollapsibleElement = document.getElementById('to-collapse');
+    if (CollapsibleElement) {
+      // Instanciate Collapsible component on the node
+      new Collapsible(CollapsibleElement);
+
+      // Call method directly on Collapsible instance registered on the node
+      CollapsibleElement.bulmaCollapsible().on('after:collapse', (e) => {
+        console.log('After collapse');
+      });
+    }

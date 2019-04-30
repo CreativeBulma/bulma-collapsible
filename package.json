@@ -1,0 +1,89 @@
+{
+	"name": "bulma-collapsible",
+	"version": "1.0.0",
+	"description": "Make any Bulma element collapsible with ease",
+	"main": "./dist/js/bulma-collapsible.min.js",
+	"style": "./dist/bulma-collapsible.min.css",
+	"sass": "./src/sass/index.sass",
+	"browsers": [
+		"> 2%",
+		"ie 11",
+		"safari > 9"
+	],
+	"scripts": {
+		"develop": "gulp watch",
+		"build": "gulp",
+		"docs": "cd ./docs && jekyll serve --incremental --config _config.local.yml -o",
+		"test": "jest"
+	},
+	"author": "CreativeBulma <support@creativebulma.net>",
+	"keywords": [
+		"collapsible",
+		"accordion",
+		"expandable",
+		"ui",
+		"component",
+		"extension",
+		"html",
+		"html5",
+		"css3",
+		"sass",
+		"javascript",
+		"js",
+		"bulma",
+		"bulmaio",
+		"bulma.io"
+	],
+	"dependencies": {
+		"bulma": "latest"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.4.4",
+		"@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+		"@babel/plugin-transform-runtime": "^7.4.4",
+		"@babel/preset-env": "^7.4.4",
+		"@babel/runtime": "^7.4.4",
+		"ansi-colors": "^3.2.4",
+		"autoprefixer": "^9.5.1",
+		"babel-jest": "^24.7.1",
+		"babel-loader": "^8.0.5",
+		"browser-sync": "^2.26.5",
+		"camelcase": "^5.3.1",
+		"css-loader": "^2.1.1",
+		"fancy-log": "^1.3.3",
+		"gulp": "^4.0.1",
+		"gulp-clean-css": "^4.2.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-nop": "0.0.3",
+		"gulp-postcss": "^8.0.0",
+		"gulp-sass": "^4.0.2",
+		"jest": "^24.7.1",
+		"jest-environment-jsdom": "^24.7.1",
+		"jest-environment-node": "^24.7.1",
+		"jest-puppeteer": "^4.1.1",
+		"node-sass": "^4.12.0",
+		"puppeteer": "^1.15.0",
+		"rimraf": "^2.6.3",
+		"sass-loader": "^7.1.0",
+		"style-loader": "^0.23.1",
+		"terser-webpack-plugin": "^1.2.3",
+		"webpack": "^4.30.0",
+		"webpack-cli": "^3.3.1",
+		"webpack-stream": "^5.2.1"
+	},
+	"release": {
+		"prepare": [
+			"@semantic-release/npm",
+			{
+				"path": "@semantic-release/changelog",
+				"changelogFile": "CHANGELOG.md"
+			}
+		]
+	},
+	"files": [
+		"dist",
+		"src",
+		"LICENSE",
+		"README.md"
+	]
+}

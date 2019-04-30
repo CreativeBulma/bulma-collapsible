@@ -1,0 +1,22 @@
+{% if site.data.api.events %}
+{% include anchor.html name="Events" %}
+<p>You can interact with component instance with events.</p>
+<table class="table is-fullwidth is-bordered is-hoverable is-narrow">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+			<th class="is-narrow">Example</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for event in site.data.api.events %}
+		<tr>
+			<td><code>{{ event.name }}</code></td>
+			<td>{{ event.description }}</td>
+			<td class="is-narrow">{% highlight javascript %}{{ event.example }}{% endhighlight %}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endif %}

@@ -1,0 +1,20 @@
+.anchor
+	position: relative
+	display: block
+	font-weight: 500
+	padding-top: 2rem
+	margin-top: 2.5rem !important
+	margin-bottom: 1.5rem
+	border-top: .1rem solid $light
+	&::after
+		content: '#'
+		font-size: 1rem
+		font-weight: 400
+		line-height: 1
+		color: $primary
+		position: relative
+		top: -.1rem
+	&:first-child
+		margin-top: 0 !important
+		border-top: none
+		padding-top: 0 !important

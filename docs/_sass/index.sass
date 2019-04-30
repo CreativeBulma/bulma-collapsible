@@ -1,0 +1,90 @@
+/*! Doku v1.1.0 */
+
+/**
+ * ----------------------------------------
+ *  1. IMPORT BULMA's INITIAL VARIABLES
+ * ----------------------------------------
+ */
+@import "node_modules/bulma/sass/utilities/initial-variables"
+@import "node_modules/bulma/sass/utilities/functions"
+
+/**
+ * ----------------------------------------
+ *  2. SET THEME VARIABLES
+ * ----------------------------------------
+ */
+
+/**
+ *  2.1. CUSTOM FONTS
+ */
+$family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
+
+$family-primary: $family-sans-serif
+$body-line-height: 2rem
+$body-size: 14px
+
+/**
+ *  2.2. GLOBAL
+ */
+// $body-size: 10px * 1.3
+$radius: .2rem
+$easing: ease-out !default
+$speed: 86ms !default
+
+/**
+ *  2.3. COLORS
+ */
+$primary: #1e88e5
+$info: #37aee3
+$success: #26c6da
+$danger:  #ef5350
+$warning: #ffb22b
+$dark: #2f3d4a
+$grey-lighter: rgba(0,0,0,0.08)
+$grey-dark: #5b748e
+$grey-darker: #313437
+$text: #67757c
+$title-color: $text
+$subtitle-color: $text
+$border: #EBEBEB
+$body-background-color: #f5f6fa
+$background-pageheader: $white
+
+$menu-item-active-background-color: transparent
+$menu-item-active-color: $primary
+$menu-item-active-border-color: $primary
+
+/**
+ * ----------------------------------------
+ *  6. IMPORT THEME SPECIFIC COLORS
+ * ----------------------------------------
+ */
+@import "theme-sass/_colors"
+
+/**
+ * ----------------------------------------
+ *  3. IMPORT BULMA's COMPONENTS VARIABLES
+ * ----------------------------------------
+ */
+@import "bulma-custom/_variables"
+
+/**
+ * ----------------------------------------
+ *  4. IMPORT BULMA CORE
+ * ----------------------------------------
+ */
+@import "node_modules/bulma/bulma"
+
+/**
+ * ----------------------------------------
+ *  5. IMPORT EXTENSIONS STYLES
+ * ----------------------------------------
+ */
+
+
+/**
+ * ----------------------------------------
+ *  6. IMPORT THEME SPECIFIC STYLES
+ * ----------------------------------------
+ */
+@import "theme-sass/_all"

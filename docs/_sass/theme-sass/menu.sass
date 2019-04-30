@@ -1,0 +1,291 @@
+$menu-collapsed-width: 90px !default
+$menu-active-width: 240px !default
+$menu-background-color: #f5f6fa !default
+$menu-dropdown-background-color: #f5f6fa !default
+$menu-dark-background-color: $dark !default
+$menu-dark-dropdown-background-color: darken($menu-dark-background-color, 5%) !default
+$menu-shadow: 0 1px 1px rgba($black, 0.08), 0 0 0 1px rgba($black, 0.01) !default
+$menu-z: 2 !default
+$menu-label-color: $text-light !default
+$menu-item-padding: .75rem !default
+$menu-title-color: $white
+$menu-item-hover-border-color: transparent !default
+$menu-item-active-background-color: transparent !default
+$menu-item-active-color: $primary !default
+$menu-item-active-border-color: $primary !default
+$menu-item-active-weight: $weight-normal
+
+$font-sizes: ('small': ($size-small),'medium': ($size-medium),'large': ($size-large)) !default
+
+/**
+ * Menu blocks definitions
+ */
+=menu
+	background-color: $menu-background-color
+	font-size: $size-normal
+	z-index: $menu-z
+	transition: all .3s ease
+	box-shadow: $menu-shadow
+
+	// Sizes
+	@each $size, $index in $font-sizes
+		$font: nth($index, 1)
+		&.is-#{$size}
+			font-size: $font
+
+	&.is-fullheight
+		height: 100%
+		max-height: 100%
+		overflow: hidden
+		overflow-y: auto
+		display: flex
+		flex-direction: column
+		align-content: stretch
+
+	// Alignment
+	&.is-centered
+		text-align: center
+	&.is-right
+		text-align: right
+	@content
+
+=menu-list
+	line-height: 1.25
+	@content
+
+=menu-caret
+	/* arrow common style */
+	// display: inline-block
+	display: flex
+	justify-items: center
+	width: .5em
+	height: .5em
+	margin: .25em
+	border-top: .1em solid $text-light
+	border-right: .1em solid $text-light
+
+=menu-dropdown
+	max-height: 0
+	border-left: .1em solid $light
+	margin: 0
+	padding: 0
+	background-color: $menu-dropdown-background-color
+	transition: max-height .2s ease-in-out
+	@content
+
+=menu-title
+	display: flex
+	flex: 1 0 100%
+	font-size: 1em
+	flex-direction: column
+	justify-content: space-between
+	align-items: center
+	color: $text-light
+	padding: .75rem
+
+=menu-label
+	color: $grey
+	font-size: $size-7
+	letter-spacing: 0.1em
+	text-align: center
+	text-transform: uppercase
+	margin-top: 1em
+	&:not(:last-child)
+		margin-bottom: 1em
+	@content
+
+=menu-item
+	overflow: hidden
+	border-radius: 0
+	background-color: transparent
+	color: $text
+	text-align: center
+	font-size: inherit
+	.menu-title
+		+menu-title
+	.icon
+		display: block
+		margin: auto
+		font-size: inherit
+		height: 1.5rem
+	&.has-dropdown
+		.menu-title
+			font-size: inherit
+			> .menu-caret
+				+menu-caret
+				transform: rotate(135deg)
+		&.is-active,
+		&.is-hoverable:hover
+			.menu-title
+				> .menu-caret
+					transform: rotate(-45deg)
+			.menu-dropdown
+				max-height: 100rem
+	&:not(.has-dropdown)
+		align-items: center
+		padding: $menu-item-padding
+		// Modifiers
+		&:hover
+			background-color: $light
+			border-color: $menu-item-hover-border-color
+		&:active,
+		&.is-active
+			background-color: $menu-item-active-background-color !important
+			border-color: $menu-item-active-border-color !important
+			color: $menu-item-active-color !important
+			font-weight: $weight-semibold
+	@content
+
+/**
+ * Menu Styles definitions
+ * @type {[type]}
+ */
+=menu-expanded
+	flex: 0 0 $menu-active-width !important
+	width: $menu-active-width !important
+	max-width: $menu-active-width !important
+	.menu-label
+		text-align: left
+		padding-left: 1em
+	.menu-item
+		text-align: left
+		.icon
+			display: inline-block
+			margin-right: .5em !important
+		.menu-title
+			flex-direction: row
+			padding: $menu-item-padding
+		&.has-dropdown
+			.menu-title
+				> .menu-caret
+					transform: rotate(45deg)
+			&.is-active,
+			&.is-hoverable:hover
+				.menu-title
+					> .menu-caret
+						transform: rotate(135deg)
+	.menu-dropdown
+		.menu-item
+			&:not(.has-dropdown)
+				padding-left: calc($menu-item-padding + .75em)
+
+=menu-collapsed
+	flex: 0 0 $menu-collapsed-width !important
+	width: $menu-collapsed-width !important
+	max-width: $menu-collapsed-width !important
+	.menu-label
+		text-align: center
+		padding-left: none
+	.menu-item
+		text-align: center
+		&:not(.has-dropdown)
+			padding-left: .5em
+			padding-right: .5em
+		.icon
+			display: block
+			margin: auto !important
+		.menu-title
+			flex-direction: column
+		&.has-dropdown
+			.menu-title
+				padding-left: .5em
+				padding-right: .5em
+				> .menu-caret
+					transform: rotate(135deg)
+			&.is-active,
+			&.is-hoverable:hover
+				.menu-title
+					> .menu-caret
+						transform: rotate(-45deg)
+
+=menu-dark
+	background-color: $menu-dark-background-color
+	.menu-item
+		color: findColorInvert($menu-dark-background-color)
+		.menu-title
+			color: findColorInvert($text-light)
+			&:hover
+				background-color: lighten($menu-dark-background-color, 15%)
+		&:not(.has-dropdown)
+			&:hover
+				background-color: lighten($menu-dark-background-color, 15%)
+	.menu-label
+		color: $grey-light
+	.menu-list
+		li
+			.menu-dropdown
+				border-left: $menu-dark-dropdown-background-color
+				background-color: $menu-dark-dropdown-background-color
+
+=menu-mobile
+	box-shadow: 5px 0px 13px 3px rgba($black, 0.1)
+	transform: translateZ(0)
+	transition: .3s ease
+	backface-visibility: hidden
+	perspective: 1000
+	will-change: transform
+	left: -100%
+	position: absolute
+	display: block !important
+	z-index: 10
+	width: 240px
+	max-width: 75%
+	&.is-active
+		left: 0
+
+/**
+ * Menu composition
+ */
+.menu
+	+menu
+	.menu-label
+		+menu-label
+	.menu-item
+		+menu-item
+	.menu-list
+		+menu-list
+		li
+			.menu-dropdown
+				+menu-dropdown
+
+	// Menu is expanded by default
+	+menu-expanded
+	&.is-collapsed
+		+menu-collapsed
+		&.is-hoverable
+			&:hover
+				+menu-expanded
+	&.is-dark
+		+menu-dark
+
+	// Manage menu on mobile breakpoints
+	&.is-mobile
+		+mobile
+			+menu-mobile
+		+tablet
+			+menu-mobile
+		+desktop
+			position: relative
+			left: inherit
+
+// Menu burger
+.menu-burger
+	+hamburger(3.25rem)
+	position: fixed
+	top: .6rem
+	right: .6rem
+	z-index: 50
+	background-color: $light
+	padding: 1rem
+	border-radius: $radius
+
+
+.mobile-burger
+	+hamburger(2rem)
+	position: fixed
+	top: .6rem
+	right: .6rem
+	z-index: 50
+	background-color: $light
+	padding: 1rem
+	border-radius: $radius

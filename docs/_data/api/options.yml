@@ -1,0 +1,4 @@
+- name: allowMultiple
+  default: False
+  description: |
+    If set to False then only one element can be opened at a time within the parent node.

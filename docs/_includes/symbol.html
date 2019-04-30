@@ -1,0 +1,19 @@
+<a href="#symbol-{{ include.name | slugify }}" id="{{ include.name | slugify }}" class="symbol">
+	<span class="symbol-name">{{ include.name }}</span>
+	{% if include.type %}
+	<span class="symbol-separator">:</span>
+	<span class="symbol-type">{{ include.type }}</span>
+	{% endif %}
+	{% if include.scope %}
+	<span class="symbol-scope">
+		{% case include.scope %}
+			{% when 'constructor' %}
+				<div class="tag is-primary">{{ include.scope }}</div>
+			{% when 'inner' %}
+				<div class="tag is-dark">{{ include.scope }}</div>
+			{% when 'public' %}
+				<div class="tag is-success">{{ include.scope }}</div>
+		{% endcase %}
+	</span>
+	{% endif %}
+</a>

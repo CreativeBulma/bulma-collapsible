@@ -1,0 +1,54 @@
+---
+layout: default
+route: index
+title: Introduction
+subtitle: Make any Bulma element collapsible with ease
+---
+
+<p>This components as been developped as a <a href="https://bulma.io" target="_blank">Bulma</a> extension and bring you the ability to <strong>easily Collapse/Exand any kind of element/component</strong>.<br />We designed it to be as generic as possible, that's why its Sass part is lighter than in its ancestor (Wikiki's bulma-accordion component). But don't worry you can still use it for accordion purpose - and even more.</p>
+
+<div class="section has-text-centered">
+	<a href="{{ site.url }}/installation" class="button is-primary">Get Started</a>
+	<a href="{{ site.url }}/usage" class="button">Live demo</a>
+</div>
+
+{% include anchor.html name="About the project" %}
+<p>BulmaCollapsible is © 2019 by CreativeBulma.</p>
+<p>This project is based on the work done by Wikiki (who is part of our team).</p>
+<div class="notification is-success"><strong>If you enjoy this component, have a look at our <a href="https://creativebulma.net">CreativeBulma MarketPlace</a> and discover Free and Premium Bulma components and Templates.</strong></div>
+
+{% include anchor.html name="Tests" %}
+<p>This library uses Jest & Puppeteer for test purpose. Test files are in <code>tests</code> directory.</p>
+<section class="section">
+	<center>
+		<a href="https://jest.io" target="_blank" style="display: inline-block;">
+			<img src="https://www.vectorlogo.zone/logos/jestjsio/jestjsio-ar21.svg" alt="jest" title="jest"
+				class="image" style="height: 70px;">
+		</a>
+		&nbsp;
+		<a href="https://github.com/GoogleChrome/puppeteer" target="_blank" style="display: inline-block;">
+			<img src="https://www.vectorlogo.zone/logos/pptrdev/pptrdev-official.svg" alt="jest" title="jest"
+				class="image" style="height: 70px;">
+		</a>
+	</center>
+</section>
+
+<a href="https://jest.io" target="_blank">Jest</a> is a testing framework maintained by Facebook that works great with
+<a href="https://github.com/GoogleChrome/puppeteer" target="_blank">Puppeteer</a>, a library for controlling Headless
+Chrome which bring the ability to test User Interface and browser component.
+<br />
+{% highlight shell %}$ npm run test{% endhighlight %}
+
+If you want to run tests using the amazing Majestic UI execute the following command from your terminal:
+{% highlight shell %}$ npx majestic{% endhighlight %}
+
+<div class="notification is-warning">
+	<strong>Caution:</strong> You have to run <code>gulp</code> to build project before running tests if you have
+	modified sources (test process is working with headless browser so it uses compiled files).
+</div>
+
+{% include anchor.html name="License" %}
+<p>BulmaCollapsible is distributed under MIT license.</p>
+
+{% include anchor.html name="Contributing" %}
+<p><strong>Contribution are welcome!</strong><br />You found a bug, a typo issue ? Feel free to create a PR on the <a href="{{ site.data.meta.github }}" target="_blank">github repository</a> of this project.<br />When contributing to this project, please first discuss the change you wish to make via issue on the <a href="{{ site.data.meta.github }}" target="_blank">github repository</a>, email, or any other method with the owners of this project before making a change.</p>

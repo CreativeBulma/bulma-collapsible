@@ -1,0 +1,12 @@
+- name: Introduction
+  link: index
+- name: Installation
+  link: 'installation'
+- name: Usage
+  link: 'usage'
+- name: Javascript API
+  link: javascript
+- name: Customization
+  link: 'customization'
+- name: Changelog
+  link: 'changelog'

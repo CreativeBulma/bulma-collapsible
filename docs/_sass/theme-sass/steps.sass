@@ -1,0 +1,49 @@
+.step-text
+	list-style: none
+	padding-left: 0
+	counter-reset: toc1
+	> li
+		position: relative
+		padding-left: 3rem
+		margin-bottom: 48px
+		font-weight: $weight-light
+		padding-top: .25rem
+		&:before
+			content: counter(toc1, decimal-leading-zero) "."
+			counter-increment: toc1
+			position: absolute
+			left: 0
+			top: 0
+			color: #ebebeb
+			font-size: 1.5rem
+			font-weight: $weight-bold
+		ul
+			&:not(.is-stepless)
+				list-style: none
+				padding-left: 0
+				margin-top: 30px
+				counter-reset: toc2
+				li
+					position: relative
+					padding-left: 3rem
+					margin-bottom: 48px
+					font-weight: $weight-light
+					&:before
+						content: counter(toc1) "-" counter(toc2) "."
+						counter-increment: toc2
+						position: absolute
+						left: 0
+						top: 0
+						color: #555
+						font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif
+						font-size: 22px
+						width: 42px
+						height: 42px
+						font-weight: bold
+	&.is-small
+		> li
+			margin-bottom: .75rem
+			padding-left: 2rem
+			padding-top: 0
+			&:before
+				font-size: 1rem

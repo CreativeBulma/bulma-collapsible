@@ -1,0 +1,106 @@
+- name: bulmaCollapsible
+  description:
+  api:
+    - name: bulmaCollapsible
+      type: class
+      scope: constructor
+      description: Instanciate the component based on the element provided and register the instance into <code>.bulmaCollapsible</code> property of the element.
+      parameters:
+        - name: element
+          type: [String, Node]
+          default: null
+          required: true
+          description: Node element (can be a selector string - must target only one node - or a DOM node) on which attach the component
+        - name: options
+          type: Object
+          default: {}
+          description: |
+            Component options. These options are merged with default options and options set via element data-attribute.
+      example: |
+        const bulmaCollapsibleElement = new bulmaCollapsible('#to-collapse');
+
+        // Access to the bulmaCollapsible instance from DOM
+        const collapsibleElement = document.getElementById('#to-collapse');
+        if (collapsibleElement) {
+          const collapsibleInstance = collapsibleElement.bulmaCollapsible();
+        }
+    - name: attach
+      type: Array
+      scope: constructor
+      description: Constructor shortcut with possibility to pass a String, a Node or a NodeList as a selector so we can instantciate multiple instances at once. Return an array of all instances. Note that each instance is link to the related DOM node under .bulmaCollapsible property.
+      example: |
+        // Return an array of bulmaCollapsible instances (empty if no DOM node found)
+        const bulmaCollapsibleInstances = bulmaCollapsible.attach('.is-collapsible');
+
+        // Loop into instances
+        bulmaCollapsibleInstances.forEach(bulmaCollapsibleInstance => {
+            // Check if current state is collapsed or not
+            console.log(bulmaCollapsibleInstance.collapsed());
+        });
+      parameters:
+        - name: selector
+          type: [String, Node, NodeList]
+          default: '.is-collapsible'
+          required: true
+          description: Selector (can be a selector string - can target multiple nodes - or a DOM node or a DOM nodes list) on which attach the component
+        - name: options
+          type: Object
+          default: {}
+          description: Component options. These options are merged with default options and options set via element data-attribute.
+    - name: collapsed
+      type: Boolean
+      scope: public
+      description: Check if element is collasped or not. Return <code>true</code> if element is collasped else <code>false</code>.
+      example: |
+        // Find DOM node from ID
+        const bulmaCollapsibleElement = document.getElementById('to-collapse');
+        if (bulmaCollapsibleElement) {
+          // Instanciate bulmaCollapsible component on the node
+          new bulmaCollapsible(bulmaCollapsibleElement);
+
+          // Call method directly on bulmaCollapsible instance registered on the node
+          bulmaCollapsibleElement.bulmaCollapsible('collapsed');
+        }
+    - name: expand
+      scope: public
+      description: Open the collapsed element.  If allowMultiple option is set to True then collapse all other bulmaCollapsible elements within the same parent node.
+      example: |
+        // Find DOM node from ID
+        const bulmaCollapsibleElement = document.getElementById('to-collapse');
+        if (bulmaCollapsibleElement) {
+          // Instanciate bulmaCollapsible component on the node
+          new bulmaCollapsible(bulmaCollapsibleElement);
+
+          // Call method directly on bulmaCollapsible instance registered on the node
+          bulmaCollapsibleElement.bulmaCollapsible('expand');
+        }
+    - name: open
+      scope: public
+      description: Shortcut to expand method
+    - name: collapse
+      scope: public
+      description: Collaspe the element.
+      example: |
+        // Find DOM node from ID
+        const bulmaCollapsibleElement = document.getElementById('to-collapse');
+        if (bulmaCollapsibleElement) {
+          // Instanciate bulmaCollapsible component on the node
+          new bulmaCollapsible(bulmaCollapsibleElement);
+
+          // Call method directly on bulmaCollapsible instance registered on the node
+          bulmaCollapsibleElement.bulmaCollapsible('collapse');
+        }
+    - name: close
+      scope: public
+      description: Shortcut to collapse method
+    - name: _init
+      scope: inner
+      description: Proceed to component initialization and set initial state (expand or collapse) based on the presence of the <code>is-active</code> class, initialize parent node to limit multiple expanded elements (accordion-like) and will attach triggerClick listener on each trigger linked to the current collapsible element.
+    - name: onTriggerClick
+      scope: inner
+      description: Called on trigger click to toggle bulmaCollapsible element (expand it if collapsed, collapse it if expanded)
+      parameters:
+        - name: event
+          type: Event
+          required: true
+          description: DOM Event Object reference

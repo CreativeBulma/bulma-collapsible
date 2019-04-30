@@ -1,0 +1,28 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+  <title>{% if page.fulltitle %}{{ page.fulltitle }}{% else %}{% if page.title %}{{ page.title }} |
+    {% endif %}{{ site.data.meta.title }}{% endif %}</title>
+
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+
+  <meta property="og:url" content="{{ site.url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@creativebulma">
+  <meta name="twitter:creator" content="@creativebulma">
+
+  <link href="{{ site.url }}/css/{{ site.docs_file }}.css?v={{ site.time | date: "%Y%m%d%H%M" }}" rel="stylesheet">
+
+  <!-- Load Font Awesome 5 -->
+  <script defer src="{{ site.data.icons.fontawesome5 }}"></script>
+
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+</head>

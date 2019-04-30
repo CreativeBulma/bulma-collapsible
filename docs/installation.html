@@ -1,0 +1,54 @@
+---
+layout: default
+route: installation
+title: Installation
+subtitle: Installation guide
+---
+
+{% capture import_sass %}
+// Import Bulma first
+@import 'bulma';
+// Import Component main Sass File
+@import 'bulma-collapsible';
+{% endcapture %}
+
+{% capture javascript_es5 %}
+<script src="/node_modules/bulma-collapsible/dist/bulma-collapsible.min.js"></script>
+{% endcapture %}
+
+{% capture javascript_es6 %}
+import bulmaCollapsible from '~bulma-collpasible';
+{% endcapture %}
+
+<div class="notification is-warning">This component extends Bulma CSS Framework, so you need to have Bulma installed to use it.</div>
+<div class="notification is-warning"><strong>Important: </strong>Installation process requires <strong>node and npm</strong> installed in your computer. Installation guide of node can be found <a href="https://nodejs.org/en/" target="_blank">here</a>. As npm comes bundled with node, separate installation of npm is not needed.</div>
+
+<ul class="step-text">
+	<li>
+		<h5 class="title is-5">Install extension from NPM</h5>
+		{% highlight bash %}$ npm install bulma-collapsible{% endhighlight %}
+	</li>
+	<li>
+		<h5 class="title is-5">Integrate the Sass part into your project</h5>
+		<p>Open you application's main sass file and add the following lines:</p>
+		{% highlight sass %}{{ import_sass }}{% endhighlight %}
+		<div class="notification is-info">Because you're importing into a <code>.sass</code> file, you don't have to specify the full path of the sass file (The main Sass file to use is defined in package.json within property <code>sass</code>).</div>
+	</li>
+	<li>
+		<h5 class="title is-5">Integrate the JavaScript part into your project</h5>
+		<div class="tabs">
+			<ul class="is-stepless">
+				<li class="is-active" data-action="tab" data-target="javascript-es6"><a href="#javascript-es6">ES6</a></li>
+				<li data-action="tab" data-target="javascript-es5"><a href="#javascript-es5">ES5</a></li>
+			</ul>
+		</div>
+		<div id="javascript-es6" class="tab-content is-active">
+			{% highlight javascript %}{{ javascript_es6 }}{% endhighlight %}
+		</div>
+		<div id="javascript-es5" class="tab-content">
+			{% highlight html %}{{ javascript_es5 }}{% endhighlight %}
+		</div>
+		<br />
+		<h6 class="title is-6">See <a href="{{ site.url }}/javascript">JavaScript API documentation</a> to find out how to work with the component in Javascript.</h6>
+	</li>
+</ul>

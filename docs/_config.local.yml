@@ -1,0 +1,16 @@
+title:         "bulmaCollapsible"
+env:           "production"
+
+highlighter:   rouge
+
+# Build
+docs_file:    "bulma-collapsible-docs"
+markdown:      kramdown
+permalink:     pretty
+exclude:       ['package.json', '.bablerc', '.eslintrc.json', '.gitignore', 'gulpfile.js', 'node_modules']
+sass:
+  sass_dir:    _sass
+  style:       compressed
+
+# Variables
+version:       1.0

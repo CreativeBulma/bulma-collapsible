@@ -1,0 +1,32 @@
+---
+layout: default
+route: customization
+title: Customization
+subtitle: Customize the visual aspect of the component
+---
+
+<ul class="step-text">
+	<li>
+		<h5 class="title is-5">Prepare your environment</h5>
+		<p> To customize the template you must have <strong>node, npm and Gulp</strong> installed in your computer.</p>
+		<p>Installation guide of node can be found <a href="https://nodejs.org/en/" target="_blank">here</a>. As npm comes bundled with node, separate installation of npm is not needed.<br />
+		If you have installed them, just move to the root directory and run the following command.</p>
+		<p>{% highlight shell %}$ npm install{% endhighlight %}</p>
+		<p>You can see that a directory <code>node_modules</code> is generated in your root directory with all dependencies files! </p>
+	</li>
+	<li>
+		<h5 class="title is-5">Customize</h5>
+		<p>Edit source files to adapt them to your need.</p>
+	</li>
+	<li>
+		<h5 class="title is-5">Compile it</h5>
+		<p>Use gulp task to build the files.</p>
+		<p class="helper">Compile <code>sass</code> files within <code>src/sass</code> directory taking <code>index.sass</code> as entry point.</p>
+		<p>{% highlight shell %}$ gulp css{% endhighlight %}</p>
+		<p class="helper">Compile <code>js</code> files within <code>src/js</code> directory taking <code>index.js</code> as entry point.</p>
+		<p>{% highlight shell %}$ gulp js{% endhighlight %}</p>
+		<p class="helper">Compile both <code>sass</code> and <code>js</code> files within <code>src</code> directory.</p>
+		<p>{% highlight shell %}$ gulp{% endhighlight %}</p>
+		<p>Compiled files are available within <code>/dist</code> directory and are automatically copied within <code>docs</code> directory.</p>
+	</li>
+</ul>

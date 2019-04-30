@@ -1,0 +1,153 @@
+$highlight-background: #f5f6fa
+$highlight-blue: #268bd2
+$highlight-comment: #586e75
+$highlight-cyan: #2aa198
+$highlight-green: #859900
+$highlight-orange: #cb4b16
+$highlight-red: #dc322f
+$highlight-text: #93a1a1
+$highlight-yellow: #b58900
+
+
+.highlight
+	background-color: $highlight-background
+	border-radius: $radius-large
+	color: $highlight-comment
+	pre
+		background-color: transparent
+		font-size: 0.875em
+		line-height: 1.375
+	.c
+		color: $highlight-text
+	.err,
+	.g
+		color: $highlight-comment
+	.k
+		color: $highlight-green
+	.l,
+	.n
+		color: $highlight-comment
+	.o
+		color: $highlight-green
+	.x
+		color: $highlight-orange
+	.p
+		color: $highlight-comment
+	.cm
+		color: $highlight-text
+	.cp
+		color: $highlight-green
+	.c1
+		color: $highlight-text
+	.cs
+		color: $highlight-green
+	.gd
+		color: $highlight-cyan
+	.ge
+		color: $highlight-comment
+		font-style: italic
+	.gr
+		color: $highlight-red
+	.gh
+		color: $highlight-orange
+	.gi
+		color: $highlight-green
+	.go,
+	.gp
+		color: $highlight-comment
+	.gs
+		color: $highlight-comment
+		font-weight: bold
+	.gu
+		color: $highlight-orange
+	.gt
+		color: $highlight-comment
+	.kc
+		color: $highlight-orange
+	.kd
+		color: $highlight-blue
+	.kn,
+	.kp
+		color: $highlight-green
+	.kr
+		color: $highlight-blue
+	.kt
+		color: $highlight-red
+	.ld
+		color: $highlight-comment
+	.m,
+	.s
+		color: $highlight-cyan
+	.na
+		color: $highlight-yellow
+	.nb
+		color: $highlight-comment
+	.nc
+		color: $highlight-blue
+	.no
+		color: $highlight-orange
+	.nd
+		color: $highlight-blue
+	.ni,
+	.ne
+		color: $highlight-orange
+	.nf
+		color: $highlight-blue
+	.nl,
+	.nn,
+	.nx,
+	.py
+		color: $highlight-comment
+	.nt,
+	.nv
+		color: $highlight-blue
+	.ow
+		color: $highlight-green
+	.w
+		color: $highlight-comment
+	.mf,
+	.mh,
+	.mi,
+	.mo
+		color: $highlight-cyan
+	.sb
+		color: $highlight-text
+	.sc
+		color: $highlight-cyan
+	.sd
+		color: $highlight-comment
+	.s2
+		color: $highlight-cyan
+	.se
+		color: $highlight-orange
+	.sh
+		color: $highlight-comment
+	.si,
+	.sx
+		color: $highlight-cyan
+	.sr
+		color: $highlight-red
+	.s1,
+	.ss
+		color: $highlight-cyan
+	.bp,
+	.vc,
+	.vg,
+	.vi
+		color: $highlight-blue
+	.il
+		color: $highlight-cyan
+
+	.content .highlight
+		margin-left: 0
+		margin-right: 0
+		text-align: left
+		&:not(:first-child)
+			margin-top: 1em
+		&:not(:last-child)
+			margin-bottom: 1em
+
+	.content
+		li
+			.highlight
+				margin-top: 0.5em

@@ -1,0 +1,38 @@
+html
+	font-size: 14px
+
+body
+	height: 100vh
+	min-height: 100vh
+	overflow: hidden
+	> .columns
+		display: flex
+		margin: 0
+		height: 100%
+		min-height: 100%
+		background-color: $white
+		> .column
+			height: 100%
+			min-height: 100%
+			max-width: 100%
+			overflow-y: auto
+			&:first-child
+				display: block
+				flex: none
+				width: 16.6666666667%
+
+#doc-menu
+	background-color: #f5f6fa !important
+	box-shadow: 0 1px 1px rgba(14, 20, 26, 0.1)
+	z-index: 40
+
+.has-text-weight-light
+	font-weight: 100
+
+
+hr
+	height: 1px
+	padding: 0
+	margin: 1rem
+	background-color: #eeebee
+	border: 0

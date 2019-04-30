@@ -1,0 +1,14 @@
+/**
+ * -------------------------------------
+ *  NOTIFICATION ELEMENT CUSTOMIZATION
+ * -------------------------------------
+ */
+.notification
+	background: #f9f9f9 !important
+	border-left: 3px solid $primary
+	color: $text !important
+	@each $name, $pair in $colors
+		$color: nth($pair, 1)
+		$color-invert: nth($pair, 2)
+		&.is-#{$name}
+			border-left-color: $color

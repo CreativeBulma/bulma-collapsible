@@ -1,0 +1,53 @@
+{% include anchor.html name="API" %}
+<div class="api">
+	{% for entry in site.data.api.api %}
+		{% include anchor.html name=entry.name level="5" %}
+		<p>{{ entry.description }}</p>
+		<section class="section is-paddingless-top">
+			{% if entry.api %}
+				{% for api in entry.api %}
+					{% if api.type %}
+						{% include symbol.html name=api.name type=api.type scope=api.scope %}
+					{% else %}
+						{% include symbol.html name=api.name scope=api.scope %}
+					{% endif %}
+					{% if api.description %}
+						<p>{{ api.description }}</p>
+						<br />
+					{% endif %}
+					{% if api.parameters %}
+						<h5 class="title is-5">Parameters</h5>
+						{% for param in api.parameters %}
+							<nav class="level param is-mobile">
+								<div class="level-left">
+									<div class="level-item">
+										<span class="param-name">{{ param.name }}</span>
+										<span class="param-separator">:</span>
+										<span class="param-type">{% if param.type %}{{ param.type | join: '<span class="param-type-separator">|</span>' }}{% else %}void{% endif %}</span>
+									</div>
+								</div>
+								<div class="level-right">
+									<div class="level-item">
+										<p>
+											{% if param.default %}
+												<em>Default:</em>&nbsp;<span class="tag">{{ param.default }}</span>
+											{% endif %}
+											{% if param.required %}
+												&nbsp;<span class="tag is-danger">Required</span>
+											{% endif %}
+										</p>
+									</div>
+								</div>
+							</nav>
+							<div class="param-description">{{ param.description }}</div>
+						{% endfor %}
+					{% endif %}
+					{% if api.example %}
+						<h5 class="title is-5">Example</h5>
+						{% highlight javascript %}{{ api.example }}{% endhighlight %}
+					{% endif %}
+				{% endfor %}
+			{% endif %}
+		</section>
+	{% endfor %}
+</div>

@@ -1,0 +1,25 @@
+{% if site.data.api.options %}
+{% include anchor.html name="Options" %}
+<p>You can easily manage the component behavior by passing an object of options to the constructor.</p>
+<table class="table is-fullwidth is-bordered is-hoverable is-narrow">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th class="is-narrow">Default value</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for option in site.data.api.options %}
+		<tr>
+			<td>{{ option.name }}</td>
+			<td class="is-narrow has-text-centered"><code>{{ option.default }}</code></td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+<div class="notification is-info">
+	<strong>Note:</strong> you can set options direclty on the DOM Element via data attributes.<br />
+Example for {{ site.data.api.options[0].name | camelize }} option :<br />
+{% highlight html %}<div data-{{ site.data.api.options[0].name | kebab_case }}="{{ site.data.api.options[0].default }}">{% endhighlight %}
+</div>
+{% endif %}

@@ -1,0 +1,26 @@
+.symbol
+	display: block
+	font-size: 1.5rem
+	padding: 1rem 0
+	.symbol-name
+		font-size: 85.4%
+		font-weight: $weight-bold
+		color: #050607
+		padding: 2px 5px 3px
+		background-color: rgba(238,240,244,.74)
+		border-radius: 3px
+	.symbol-separator
+		background-color: transparent
+		color: #aaafbd
+	.symbol-type
+		color: #7e879c
+		font-weight: $weight-normal
+		background-color: transparent
+	&::before
+		content: '#'
+		font-size: 2rem
+		font-weight: $weight-normal
+		line-height: 1
+		color: $grey-lighter
+		position: relative
+		top: .3rem

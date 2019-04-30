@@ -1,0 +1,290 @@
+---
+layout: default
+route: usage
+title: Usage
+subtitle: Easily make any element collapsible
+---
+
+{% capture collapsible_card %}
+<div class="card">
+	<header class="card-header">
+		<p class="card-header-title">
+			Card title
+		</p>
+		<a href="#collapsible-card" data-action="collapse" class="card-header-icon is-hidden-fullscreen" aria-label="more options">
+			<span class="icon">
+				<i class="fas fa-angle-down" aria-hidden="true"></i>
+			</span>
+		</a>
+	</header>
+	<div id="collapsible-card" class="is-collapsible is-active">
+		<div class="card-content">
+			<p class="title is-4">
+				“There are two hard things in computer science: cache invalidation, naming things, and off-by-one
+				errors.”
+			</p>
+			<p class="subtitle is-5">
+				Jeff Atwood
+			</p>
+		</div>
+		<footer class="card-footer">
+			<p class="card-footer-item">
+				<span>
+					View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
+				</span>
+			</p>
+			<p class="card-footer-item">
+				<span>
+					Share on <a href="#">Facebook</a>
+				</span>
+			</p>
+		</footer>
+	</div>
+</div>
+{% endcapture %}
+
+{% capture collapsible_panel %}
+<nav class="panel">
+	<p class="panel-heading">repositories <a href="#collapsible-panel" data-action="collapse">Collapse/Expand</a></p>
+	<div id="collapsible-panel" class="is-collapsible is-active">	<!-- Wrapper Div to be able to collapse/expand Panel's content -->
+		<div class="panel-block">
+			<p class="control has-icons-left">
+			<input class="input is-small" type="text" placeholder="search">
+			<span class="icon is-small is-left">
+				<i class="fas fa-search" aria-hidden="true"></i>
+			</span>
+			</p>
+		</div>
+		<p class="panel-tabs">
+			<a class="is-active">all</a>
+			<a>public</a>
+			<a>private</a>
+			<a>sources</a>
+			<a>forks</a>
+		</p>
+		<a class="panel-block is-active">
+			<span class="panel-icon">
+			<i class="fas fa-book" aria-hidden="true"></i>
+			</span>
+			bulma
+		</a>
+		<a class="panel-block">
+			<span class="panel-icon">
+			<i class="fas fa-book" aria-hidden="true"></i>
+			</span>
+			marksheet
+		</a>
+		<a class="panel-block">
+			<span class="panel-icon">
+			<i class="fas fa-book" aria-hidden="true"></i>
+			</span>
+			minireset.css
+		</a>
+		<a class="panel-block">
+			<span class="panel-icon">
+			<i class="fas fa-book" aria-hidden="true"></i>
+			</span>
+			jgthms.github.io
+		</a>
+		<a class="panel-block">
+			<span class="panel-icon">
+			<i class="fas fa-code-branch" aria-hidden="true"></i>
+			</span>
+			daniellowtw/infboard
+		</a>
+		<a class="panel-block">
+			<span class="panel-icon">
+			<i class="fas fa-code-branch" aria-hidden="true"></i>
+			</span>
+			mojs
+		</a>
+		<label class="panel-block">
+			<input type="checkbox">
+			remember me
+		</label>
+		<div class="panel-block">
+			<button class="button is-link is-outlined is-fullwidth">
+			reset all filters
+			</button>
+		</div>
+	</div>
+</nav>
+{% endcapture %}
+
+{% capture collapsible_message %}
+<article class="message">
+	<div class="message-header">
+		<p>Hello World. <a href="#collapsible-message" data-action="collapse">Collapse/Expand</a></p>
+		<button class="delete" aria-label="delete"></button>
+	</div>
+	<div id="collapsible-message" class="message-body is-collapsible">
+		<div class="message-body-content">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis
+			placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum
+			<a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et
+			sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et
+			sem eget, facilisis sodales sem.
+		</div>
+	</div>
+</article>
+{% endcapture %}
+
+{% capture collapsible_accordion %}
+<div id="accordion_first">
+	<article class="message">
+		<div class="message-header">
+			<p>Question 1 <a href="#collapsible-message-accordion-1" data-action="collapse">Collapse/Expand</a></p>
+		</div>
+		<div id="collapsible-message-accordion-1" class="message-body is-collapsible" data-parent="accordion_first">
+			<div class="message-body-content">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis
+				placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum
+				<a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et
+				sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et
+				sem eget, facilisis sodales sem.
+			</div>
+		</div>
+	</article>
+	<article class="message">
+		<div class="message-header">
+			<p>Question 2 <a href="#collapsible-message-accordion-2" data-action="collapse">Collapse/Expand</a></p>
+		</div>
+		<div id="collapsible-message-accordion-2" class="message-body is-collapsible" data-parent="accordion_first">
+			<div class="message-body-content">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis
+				placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum
+				<a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et
+				sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et
+				sem eget, facilisis sodales sem.
+			</div>
+		</div>
+	</article>
+	<article class="message">
+		<div class="message-header">
+			<p>Question 3 <a href="#collapsible-message-accordion-3" data-action="collapse">Collapse/Expand</a></p>
+		</div>
+		<div id="collapsible-message-accordion-3" class="message-body is-collapsible" data-parent="accordion_first">
+			<div class="message-body-content">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis
+				placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum
+				<a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et
+				sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et
+				sem eget, facilisis sodales sem.
+			</div>
+		</div>
+	</article>
+</div>
+{% endcapture %}
+
+{% capture collapsible_accordion_multiple %}
+<div id="accordion_second">
+	<article class="message">
+		<div class="message-header">
+			<p>Question 1 <a href="#collapsible-message-accordion-second-1" data-action="collapse">Collapse/Expand</a></p>
+		</div>
+		<div id="collapsible-message-accordion-second-1" class="message-body is-collapsible" data-parent="accordion_second" data-allow-multiple="true">
+			<div class="message-body-content">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis
+				placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum
+				<a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et
+				sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et
+				sem eget, facilisis sodales sem.
+			</div>
+		</div>
+	</article>
+	<article class="message">
+		<div class="message-header">
+			<p>Question 2 <a href="#collapsible-message-accordion-second-2" data-action="collapse">Collapse/Expand</a></p>
+		</div>
+		<div id="collapsible-message-accordion-second-2" class="message-body is-collapsible" data-parent="accordion_second" data-allow-multiple="true">
+			<div class="message-body-content">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis
+				placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum
+				<a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et
+				sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et
+				sem eget, facilisis sodales sem.
+			</div>
+		</div>
+	</article>
+	<article class="message">
+		<div class="message-header">
+			<p>Question 3 <a href="#collapsible-message-accordion-second-3" data-action="collapse">Collapse/Expand</a></p>
+		</div>
+		<div id="collapsible-message-accordion-second-3" class="message-body is-collapsible" data-parent="accordion_second" data-allow-multiple="true">
+			<div class="message-body-content">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis
+				placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum
+				<a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et
+				sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et
+				sem eget, facilisis sodales sem.
+			</div>
+		</div>
+	</article>
+</div>
+{% endcapture %}
+
+{% capture caution_message_padding %}
+<div class="notification is-danger">
+	<strong>CAUTION</strong><br />Element with <code>is-collapsible</code> class CAN NOT contains padding. That why in case you'd like to use it with message component you need to wrap the message-body content into a new container with the class <code>message-body-content</code> to get it work. Globally, if the collapsible element has padding you'll need to remove padding from it and wrap its content into a new div with the padding.
+</div>
+{% endcapture %}
+
+{% capture caution_panel %}
+<div class="notification is-danger">
+	<strong>CAUTION</strong><br />If you use Collapsible with Panel component don't forget to wrap panel content within a container which contains <code>is-collapsible</code> class.
+</div>
+{% endcapture %}
+
+<div>
+	<div class="notification is-warning">Collapsible component only provides collapse/expand management. Visual stylish is in your hand and can be applied by following <a href="https://bulma.io/documentation/customize/" target="_blank">Bulma customization steps</a>.</div>
+	<div class="notification is-info">
+		<strong>INFO</strong><br />When a trigger is clicked and element expanded, all triggers related to the current collapsible element will receive the <code>is-active</code> class. This way you are able to customize trigger based on collapsible element state (expanded/collapsed)
+	</div>
+
+	<h5 class="title is-5">Making an element Collapsible only requires few steps:</h5>
+	<ul class="step-text is-small">
+		<li>
+			<p>Make sure the DOM element you want to be collapsible has an ID</p>
+		</li>
+		<li>
+			<p>Add <code>is-collapsible</code> class to the DOM element you want to be collapsible</p>
+		</li>
+		<li>
+			<p>If you want to open (expand) element by default add <code>is-active</code> class</p>
+		</li>
+		<li>
+			<p>Set triggers by adding <code>data-action="collapse"</code> and <code>data-target="#{ELEMENT_ID}"</code> attributes to the element(s).</p>
+		</li>
+		<li>
+			<p>Instanciate all instances through JavaScript. <em>See <a href="{{ site.url }}/javascript">JavaScript API</a> to find out how.</em></p>
+		</li>
+	</ul>
+
+	{% include anchor.html name="Collapsible Card" %}
+	<p></p>
+	<div class="snippet">
+		{% include snippet.html content=collapsible_card %}
+	</div>
+
+	{% include anchor.html name="Collapsible Panel" %}
+	{{ caution_panel }}
+	<div class="snippet">
+		{% include snippet.html content=collapsible_panel %}
+	</div>
+
+	{% include anchor.html name="Collapsible Message" %}
+	{{ caution_message_padding }}
+	<div class="snippet">
+		{% include snippet.html content=collapsible_message %}
+	</div>
+
+	{% include anchor.html name="Accordion" %}
+	<p>You can easily create an Accordion like component using <code>message</code> element with <code>Collapsible</code></p>
+	<div class="notification is-info">When you want to manage multiple collapsible elements and link them add <code>data-parent</code> attribute on the collapsible element with the parent container ID as value. See below example where we wrapped all collapsible messages within a container with id <code>accordion_first</code>.</div>
+	<div class="snippet">
+		{% include snippet.html content=collapsible_accordion %}
+		<p><strong><u>Allow multiple elements opened at the same time</u></strong> (means does not close previously opened element when opening the new one), set <code>allowMultiple</code> option to <code>True</code>.<br /><em>See <a href="{{ site.url }}/javascript">JavaScript API</a> to find out how.</em></p>
+		{% include snippet.html content=collapsible_accordion_multiple %}
+	</div>
+
+</div>

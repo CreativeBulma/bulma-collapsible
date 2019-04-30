@@ -1,0 +1,10 @@
+# Files
+.DS_Store
+.jekyll-metadata
+_config.version.yml
+PUBLISHING.md
+npm-debug.log
+
+# Folders
+.sass-cache
+_site

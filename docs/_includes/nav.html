@@ -1,0 +1,33 @@
+<nav class="navbar" role="navigation" aria-label="navigation">
+	<div class="navbar-menu">
+		<div class="navbar-start">
+
+		</div>
+		<div class="navbar-end">
+			{% if site.data.version.length %}
+			<div class="navbar-item has-dropdown is-hoverable">
+				<a class="navbar-link">v{{ site.version }}</a>
+
+				<div class="navbar-dropdown is-right">
+					{% for version in site.data.version %}
+					{% if version.number != site.version %}
+					<a class="navbar-item">v{{ version.number }}</a>
+					{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+			{% endif %}
+			<a class="navbar-item is-square" href="{{ site.data.meta.github }}" alt="Github repository"
+				target="_blank" style="justify-content: center;">
+				<span class="icon" style="color: #333;">
+					<i class="fab fa-lg fa-github-alt"></i>
+				</span>
+			</a>
+			<a class="navbar-item is-square" href="{{ site.data.meta.twitter }}" target="_blank">
+				<span class="icon" style="color: #55acee;">
+					<i class="fab fa-lg fa-twitter"></i>
+				</span>
+			</a>
+		</div>
+	</div>
+</nav>
