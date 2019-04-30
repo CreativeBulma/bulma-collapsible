@@ -4,6 +4,9 @@
 This components as been developped as a [Bulma](https://bulma.io) extension and bring you the ability to **easily Collapse/Exand any kind of element/component**.  
 We designed it to be as generic as possible, that's why its Sass part is lighter than in its ancestor (Wikiki's bulma-accordion component). But don't worry you can still use it for accordion purpose - and even more.
 
+[![npm](https://img.shields.io/npm/v/bulma-collapsible.svg)](https://www.npmjs.com/package/bulma-collapsible)
+[![npm](https://img.shields.io/npm/dm/bulma-collapsible.svg)](https://www.npmjs.com/package/bulma-collapsible)
+
 ------------
 
 ## Prerequisites
