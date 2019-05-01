@@ -17,6 +17,10 @@
 		"test": "jest"
 	},
 	"author": "CreativeBulma <support@creativebulma.net>",
+	"bugs": {
+		"url": "https://github.com/CreativeBulma/bulma-collapsible/issues"
+	},
+	"homepage": "https://demo.creativebulma.net/components/bulma-collapsible/1.0/",
 	"keywords": [
 		"collapsible",
 		"accordion",
