@@ -14,6 +14,9 @@ This component extends [Bulma CSS Framework](https://bulma.io) and requires it t
 
 ## Get Started
 [Installation steps](https://demo.creativebulma.net/components/bulma-collapsible/1.0/installation)
+```shell
+npm i -D @creativebulma/bulma-collapsible
+```
 
 ## Live demo
 [Live demo](https://demo.creativebulma.net/components/bulma-collapsible/1.0/usage)
