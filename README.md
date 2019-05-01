@@ -13,16 +13,16 @@ We designed it to be as generic as possible, that's why its Sass part is lighter
 This component extends [Bulma CSS Framework](https://bulma.io) and requires it to work.
 
 ## Get Started
-[Installation steps](https://demo.creativebulma.net/components/bulma-collapsible/1.0/installation)
 ```shell
 npm i -D @creativebulma/bulma-collapsible
 ```
+Full installation steps can be found here: [installation steps](https://demo.creativebulma.net/components/bulma-collapsible/1.0/installation)
 
 ## Live demo
 [Live demo](https://demo.creativebulma.net/components/bulma-collapsible/1.0/usage)
 
 ## Documentation
-See [docs/README.md](https://demo.creativebulma.net/components/bulma-collapsible/1.0/README.md)
+See [documentation](https://demo.creativebulma.net/components/bulma-collapsible/1.0/)
 
 ## Tests
 This library uses Jest & Puppeteer for test purpose.
