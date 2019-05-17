@@ -2,14 +2,17 @@ const pkg = require('./package.json');
 const camelCase = require('camelcase');
 const TerserPlugin = require('terser-webpack-plugin');
 
+const pkgName = pkg.name.split('/');
+const packageName = pkgName[pkgName.length - 1];
+
 module.exports = {
 	mode: 'production',
 	entry: {
 		app: './src/js/index.js'
 	},
 	output: {
-		filename: pkg.name + '.min.js',
-		library: camelCase(pkg.name),
+		filename: packageName + '.min.js',
+		library: camelCase(packageName),
 		libraryTarget: 'umd',
 		libraryExport: 'default'
 	},
