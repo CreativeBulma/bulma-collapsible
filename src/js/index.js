@@ -1,4 +1,5 @@
 import Component from './utils/component';
+import * as dom from './utils/dom';
 import * as type from './utils/type';
 
 import defaultOptions from './defaultOptions';
@@ -20,7 +21,7 @@ export default class bulmaCollapsible extends Component {
 	 * @return {Array} Array of all Plugin instances
 	 */
 	static attach(selector = '.is-collapsible', options = {}) {
-		return super.attach(selector, options);
+		return super.attach(selector, options, defaultOptions);
 	}
 
 	/**
@@ -31,11 +32,11 @@ export default class bulmaCollapsible extends Component {
 	_init() {
 		this._parent = this.element.dataset.parent;
 		if (this._parent) {
-			const parent = document.getElementById(this._parent);
-			this._siblings = parent.querySelectorAll(this.options.selector) || [];
+			const parent = this.options.container.getElementById(this._parent);
+			this._siblings = dom.querySelectorAll(this.options.selector, parent) || [];
 		}
 
-		this._triggers = document.querySelectorAll(`[data-action="collapse"][href="#${this.element.id}"], [data-action="collapse"][data-target="${this.element.id}"]`) || null;
+		this._triggers = this.options.container.querySelectorAll(`[data-action="collapse"][href="#${this.element.id}"], [data-action="collapse"][data-target="${this.element.id}"]`) || null;
 		if (this._triggers) {
 			this._triggers.on('click touch', this.onTriggerClick);
 		}

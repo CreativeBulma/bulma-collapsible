@@ -1,5 +1,6 @@
 const defaultOptions = {
-	allowMultiple: false
+	allowMultiple: false,
+	container: document
 };
 
 export default defaultOptions;

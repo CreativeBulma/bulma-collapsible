@@ -7,7 +7,7 @@ export default class Component extends EventEmitter {
 	constructor(element, options = {}, defaultOptions = {}) {
 		super();
 
-		this.element = types.isString(element) ? document.querySelector(element) : element;
+		this.element = types.isString(element) ? this.options.container.querySelector(element) : element;
 
 		// An invalid selector or non-DOM node has been provided.
 		if (!this.element) {
@@ -30,15 +30,20 @@ export default class Component extends EventEmitter {
 	 * @method
 	 * @return {Array} Array of all Plugin instances
 	 */
-	static attach(selector = null, options = {}) {
+	static attach(selector = null, options = {}, defaultOptions = {}) {
 		let instances = new Array();
 		if (selector === null) {
 			return instances;
 		}
 
-		const elements = dom.querySelectorAll(selector);
+		options = {
+			...defaultOptions,
+			...options,
+			...dom.optionsFromDataset(this.element, defaultOptions) // Use Element dataset values to override options
+		};
 
-		[].forEach.call(elements, element => {
+		const elements = dom.querySelectorAll(selector, options.container) || [];
+		elements.forEach(element => {
 			// Check if plugin has already been instantiated for element
 			if (typeof element[this.constructor.name] === 'undefined') { // If no then instantiate it and register it in element
 				instances.push(new this(element, {

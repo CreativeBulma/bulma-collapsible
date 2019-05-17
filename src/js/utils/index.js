@@ -11,7 +11,7 @@ export const ready = (handler) => {
 export const detectSupportsPassive = () => {
 	let supportsPassive = false;
 
-	try {
+	if (typeof window !== 'undefined' && typeof window.addEventListener === 'function') {
 		let opts = Object.defineProperty({}, 'passive', {
 			get() {
 				supportsPassive = true;
@@ -19,9 +19,10 @@ export const detectSupportsPassive = () => {
 			}
 		});
 
-		window.addEventListener('testPassive', null, opts);
-		window.removeEventListener('testPassive', null, opts);
-	} catch (e) {}
+		const noop = () => { };
+		window.addEventListener('testPassive', noop, opts);
+		window.removeEventListener('testPassive', noop, opts);
+	}
 
 	return supportsPassive;
 };

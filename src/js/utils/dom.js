@@ -42,7 +42,7 @@ export const optionsFromDataset = (node, defaultOptions = {}) => {
 	}
 };
 
-if (window.Node && !Node.prototype.on) {
+if (Node && !Node.prototype.on) {
 	Node.prototype.on = function (events, handler) {
 		if (!Array.isArray(events)) {
 			events = events.split(' ');
@@ -56,7 +56,7 @@ if (window.Node && !Node.prototype.on) {
 	};
 }
 
-if (window.NodeList && !NodeList.prototype.on) {
+if (NodeList && !NodeList.prototype.on) {
 	NodeList.prototype.on = function (events, handler) {
 		this.forEach(node => {
 			node.on(events, handler);
@@ -64,7 +64,7 @@ if (window.NodeList && !NodeList.prototype.on) {
 	};
 }
 
-if (window.Node && !Node.prototype.off) {
+if (Node && !Node.prototype.off) {
 	Node.prototype.off = function (events, handler) {
 		if (!Array.isArray(events)) {
 			events = events.split(' ');
@@ -78,7 +78,7 @@ if (window.Node && !Node.prototype.off) {
 	};
 }
 
-if (window.NodeList && !NodeList.prototype.off) {
+if (NodeList && !NodeList.prototype.off) {
 	NodeList.prototype.off = function (events, handler) {
 		this.forEach(node => {
 			node.off(events, handler);
