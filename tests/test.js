@@ -62,6 +62,19 @@ describe('bulmaCollapsible', () => {
 		});
 	});
 
+	it('Should return an array of bulmaCollapsible instanciated from specific container', async () => {
+		const instances = await page.evaluate(() => bulmaCollapsible.attach('.is-collapsible', {
+			container: document.getElementById('collapsibles')
+		}));
+
+		// We should have two Collapsible instances returned
+		expect(instances.length).toBe(2);
+		instances.every(instance => {
+			expect(typeof instance).toBe('object');
+			expect(instance._class == 'bulmaCollapsible');
+		});
+	});
+
 	it('Should return an array of bulmaCollapsible instanciated from NodeList', async () => {
 		const instances = await page.evaluate(() => {
 			const elements = document.querySelectorAll('.is-collapsible') || [];

@@ -1,6 +1,6 @@
 {
 	"name": "@creativebulma/bulma-collapsible",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Make any Bulma element collapsible with ease",
 	"main": "./dist/js/bulma-collapsible.min.js",
 	"style": "./dist/bulma-collapsible.min.css",

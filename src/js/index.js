@@ -32,7 +32,7 @@ export default class bulmaCollapsible extends Component {
 	_init() {
 		this._parent = this.element.dataset.parent;
 		if (this._parent) {
-			const parent = this.options.container.getElementById(this._parent);
+			const parent = this.options.container.querySelector(`#${this._parent}`);
 			this._siblings = dom.querySelectorAll(this.options.selector, parent) || [];
 		}
 
