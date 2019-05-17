@@ -14,7 +14,11 @@ export const querySelector = (selector, node) => {
 		if (node && type.isNode(node)) {
 			return node.querySelector(selector);
 		} else {
-			return document.querySelector(selector);
+			if (typeof document !== 'undefined') {
+				return document.querySelector(selector);
+			} else {
+				return null;
+			}
 		}
 	}
 
@@ -24,14 +28,18 @@ export const querySelector = (selector, node) => {
 };
 export const querySelectorAll = (selector, node) => {
 	if (type.isFunction(selector)) {
-		return selector(node ? node : document);
+		return selector(node ? node : (typeof document !== 'undefined' ? document : null));
 	}
 
 	if (type.isString(selector)) {
 		if (node && type.isNode(node)) {
 			return node.querySelectorAll(selector);
 		} else {
-			return document.querySelectorAll(selector);
+			if (typeof document !== 'undefined') {
+				return document.querySelectorAll(selector);
+			} else {
+				return null;
+			}
 		}
 	}
 
@@ -61,8 +69,8 @@ export const optionsFromDataset = (node, defaultOptions = {}) => {
 	}
 };
 
-if (Node && !Node.prototype.on) {
-	Node.prototype.on = window.on = function (names, handler) {
+if (typeof Node !== 'undefined' && !Node.prototype.on) {
+	Node.prototype.on = function (names, handler) {
 		if (!Array.isArray(names)) {
 			names = names.split(' ');
 		}
@@ -77,7 +85,7 @@ if (Node && !Node.prototype.on) {
 	};
 }
 
-if (NodeList && !NodeList.prototype.on) {
+if (typeof NodeList !== 'undefined' && !NodeList.prototype.on) {
 	NodeList.prototype.on = function (names, handler) {
 		this.forEach(node => {
 			node.on(names, handler);
@@ -87,7 +95,7 @@ if (NodeList && !NodeList.prototype.on) {
 	};
 }
 
-if (Node && !Node.prototype.off) {
+if (typeof Node !== 'undefined' && !Node.prototype.off) {
 	Node.prototype.off = function (names, handler) {
 		if (!Array.isArray(names)) {
 			names = names.split(' ');
@@ -103,7 +111,7 @@ if (Node && !Node.prototype.off) {
 	};
 }
 
-if (NodeList && !NodeList.prototype.off) {
+if (typeof NodeList !== 'undefined' && !NodeList.prototype.off) {
 	NodeList.prototype.off = function (names, handler) {
 		this.forEach(node => {
 			node.off(names, handler);

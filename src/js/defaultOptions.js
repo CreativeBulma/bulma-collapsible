@@ -1,6 +1,6 @@
 const defaultOptions = {
 	allowMultiple: false,
-	container: document
+	container: typeof document !== 'undefined' ? document : null
 };
 
 export default defaultOptions;
