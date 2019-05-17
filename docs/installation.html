@@ -20,6 +20,10 @@ subtitle: Installation guide
 import bulmaCollapsible from '@creativebulma/bulma-collapsible';
 {% endcapture %}
 
+{% capture javascript_reactJS %}
+<a href="https://codepen.io/CreativeBulma/pen/YbQqoQ" target="_blank">ReactJS integration example on CodePen</a>
+{% endcapture %}
+
 <div class="notification is-warning">This component extends Bulma CSS Framework, so you need to have Bulma installed to use it.</div>
 <div class="notification is-warning"><strong>Important: </strong>Installation process requires <strong>node and npm</strong> installed in your computer. Installation guide of node can be found <a href="https://nodejs.org/en/" target="_blank">here</a>. As npm comes bundled with node, separate installation of npm is not needed.</div>
 
@@ -52,3 +56,13 @@ import bulmaCollapsible from '@creativebulma/bulma-collapsible';
 		<h6 class="title is-6">See <a href="{{ site.url }}/javascript">JavaScript API documentation</a> to find out how to work with the component in Javascript.</h6>
 	</li>
 </ul>
+
+<h5 class="title is-5">Framework Integration</h5>
+<div class="tabs">
+	<ul class="is-stepless">
+		<li class="is-active" data-action="tab" data-target="javascript-reactjs"><a href="#javascript-reactjs">ReactJS</a></li>
+	</ul>
+</div>
+<div id="javascript-reactjs" class="tab-content is-active">
+	See our {{ javascript_reactJS }}
+</div>
