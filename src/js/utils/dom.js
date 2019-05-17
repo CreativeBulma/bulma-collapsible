@@ -18,14 +18,33 @@ export const querySelector = (selector, node) => {
 		}
 	}
 
-	if (Array.isArray(selector) || NodeList.prototype.isPrototypeOf(selector)) {
+	if (Array.isArray(selector) || type.isNodeList(selector)) {
 		return selector[0];
 	}
 };
-export const querySelectorAll = (selector, node) => type.isFunction(selector) ?
-	selector(node ? node : document) : (type.isString(selector) ?
-		((node && type.isNode(node)) ? node.querySelectorAll(selector) : document.querySelectorAll(selector)) : (type.isNode(selector) ? [selector] : (NodeList.prototype.isPrototypeOf(selector) ?
-			selector : null)));
+export const querySelectorAll = (selector, node) => {
+	if (type.isFunction(selector)) {
+		return selector(node ? node : document);
+	}
+
+	if (type.isString(selector)) {
+		if (node && type.isNode(node)) {
+			return node.querySelectorAll(selector);
+		} else {
+			return document.querySelectorAll(selector);
+		}
+	}
+
+	if (type.isNode(selector)) {
+		return [selector];
+	}
+
+	if (type.isNodeList(selector)) {
+		return selector;
+	}
+
+	return null;
+};
 
 export const optionsFromDataset = (node, defaultOptions = {}) => {
 	if (type.isNode(node)) {
@@ -43,45 +62,53 @@ export const optionsFromDataset = (node, defaultOptions = {}) => {
 };
 
 if (Node && !Node.prototype.on) {
-	Node.prototype.on = function (events, handler) {
-		if (!Array.isArray(events)) {
-			events = events.split(' ');
+	Node.prototype.on = window.on = function (names, handler) {
+		if (!Array.isArray(names)) {
+			names = names.split(' ');
 		}
 
-		events.forEach(event => {
-			this.addEventListener(event, handler, utils.detectSupportsPassive() ? {
+		names.forEach(name => {
+			this.addEventListener(name.trim(), handler, utils.detectSupportsPassive() ? {
 				passive: false
 			} : false);
 		});
+
+		return this;
 	};
 }
 
 if (NodeList && !NodeList.prototype.on) {
-	NodeList.prototype.on = function (events, handler) {
+	NodeList.prototype.on = function (names, handler) {
 		this.forEach(node => {
-			node.on(events, handler);
+			node.on(names, handler);
 		});
+
+		return this;
 	};
 }
 
 if (Node && !Node.prototype.off) {
-	Node.prototype.off = function (events, handler) {
-		if (!Array.isArray(events)) {
-			events = events.split(' ');
+	Node.prototype.off = function (names, handler) {
+		if (!Array.isArray(names)) {
+			names = names.split(' ');
 		}
 
-		events.forEach(event => {
-			this.removeEventListener(event, handler, utils.detectSupportsPassive() ? {
+		names.forEach(name => {
+			this.removeEventListener(name.trim(), handler, utils.detectSupportsPassive() ? {
 				passive: false
 			} : false);
 		});
+
+		return this;
 	};
 }
 
 if (NodeList && !NodeList.prototype.off) {
-	NodeList.prototype.off = function (events, handler) {
+	NodeList.prototype.off = function (names, handler) {
 		this.forEach(node => {
-			node.off(events, handler);
+			node.off(names, handler);
 		});
+
+		return this;
 	};
 }

@@ -10,6 +10,7 @@ export const isNode = unknown => {
 		return false;
 	}
 };
+export const isNodeList = unknown => NodeList.prototype.isPrototypeOf(unknown);
 const falsy = /^(?:f(?:alse)?|no?|0+)$/i;
 export const BooleanParse = function (val) {
 	return !falsy.test(val) && !!val;
