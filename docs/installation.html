@@ -9,15 +9,15 @@ subtitle: Installation guide
 // Import Bulma first
 @import 'bulma';
 // Import Component main Sass File
-@import 'bulma-collapsible';
+@import '~@creativebulma/bulma-collapsible';
 {% endcapture %}
 
 {% capture javascript_es5 %}
-<script src="/node_modules/bulma-collapsible/dist/bulma-collapsible.min.js"></script>
+<script src="/node_modules/@creativebulma/bulma-collapsible/dist/js/bulma-collapsible.min.js"></script>
 {% endcapture %}
 
 {% capture javascript_es6 %}
-import bulmaCollapsible from '~bulma-collpasible';
+import bulmaCollapsible from '@creativebulma/bulma-collapsible';
 {% endcapture %}
 
 <div class="notification is-warning">This component extends Bulma CSS Framework, so you need to have Bulma installed to use it.</div>
