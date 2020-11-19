@@ -16,7 +16,7 @@ This component extends [Bulma CSS Framework](https://bulma.io) and requires it t
 ```shell
 npm i -D @creativebulma/bulma-collapsible
 ```
-Full installation steps can be found here: [installation steps](https://demo.creativebulma.net/components/bulma-collapsible/1.0/installation)
+Full installation steps can be found here: [installation steps](https://bulma-collapsible.netlify.app/installation)
 
 ## Live demo
 [Live demo](https://bulma-collapsible.netlify.app/usage)
