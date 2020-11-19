@@ -19,10 +19,10 @@ npm i -D @creativebulma/bulma-collapsible
 Full installation steps can be found here: [installation steps](https://demo.creativebulma.net/components/bulma-collapsible/1.0/installation)
 
 ## Live demo
-[Live demo](https://demo.creativebulma.net/components/bulma-collapsible/1.0/usage)
+[Live demo](https://bulma-collapsible.netlify.app/usage)
 
 ## Documentation
-See [documentation](https://demo.creativebulma.net/components/bulma-collapsible/1.0/)
+See [documentation](https://bulma-collapsible.netlify.app/)
 
 ## Tests
 This library uses Jest & Puppeteer for test purpose.
