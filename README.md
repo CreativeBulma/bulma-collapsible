@@ -52,8 +52,6 @@ BulmaCollapsible is © 2019 by CreativeBulma.
 
 This project is based on the work done by Wikiki (who is part of our team).
 
-**If you enjoy this component, have a look at our [CreativeBulma MarketPlace](https://creativebulma.net) and discover Free and Premium Bulma components and Templates.**
-
 ## License
 BulmaCollapsible is distributed under MIT license.
 
