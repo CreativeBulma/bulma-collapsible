@@ -50,7 +50,7 @@ $ npx majestic
 ## About the project
 BulmaCollapsible is © 2019 by CreativeBulma.
 
-This project is based on the work done by Wikiki (who is part of our team).
+This project is based on the work done by Wikiki.
 
 ## License
 BulmaCollapsible is distributed under MIT license.
