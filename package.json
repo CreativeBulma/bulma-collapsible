@@ -16,7 +16,6 @@
 		"docs": "cd ./docs && jekyll serve --incremental --config _config.local.yml -o",
 		"test": "jest"
 	},
-	"author": "CreativeBulma <support@creativebulma.net>",
 	"bugs": {
 		"url": "https://github.com/CreativeBulma/bulma-collapsible/issues"
 	},
