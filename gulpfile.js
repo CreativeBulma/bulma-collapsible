@@ -6,11 +6,15 @@ const concat = require('gulp-concat');
 const fs = require('fs');
 const gulp = require('gulp');
 const log = require('fancy-log');
-const nop = require('gulp-nop');
+// const nop = require('gulp-nop');
+const through2 = require('through2')
+const nop = () => through2(
+	(chunk, enc, cb) => cb(null, chunk) // transform is a noop
+)
 const path = require('path');
 const pkg = require('./package.json');
 const postcss = require('gulp-postcss');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const webpackConfig = require('./webpack.config.js');
@@ -34,14 +38,14 @@ const dirs = {
 
 gulp.task('css', () => {
 	if (fs.existsSync(files.sass)) {
-		return gulp.src(['node_modules/bulma/sass/utilities/_all.sass'].concat([files.sass]))
-			.pipe(concat(packageName + '.sass'))
+		return gulp.src(['node_modules/bulma/sass/utilities/_index.scss'].concat([files.sass]))
 			.pipe(sass({
 				style: 'compressed',
 				trace: true,
 				loadPath: [dirs.sass],
 				includePaths: ['node_modules', 'node_modules/bulma/sass/utilities/']
 			}))
+			.pipe(concat(packageName + '.sass'))
 			.pipe(concat(packageName + '.min.css'))
 			.pipe(postcss([autoprefixer({
 				browsers: pkg.broswers
@@ -60,7 +64,7 @@ gulp.task('css', () => {
 gulp.task('js', () => {
 	if (fs.existsSync(files.js)) {
 		return gulp.src(files.js)
-			.pipe(webpackStream(webpackConfig), webpack)
+			.pipe(webpackStream(webpackConfig, webpack))
 			.pipe(gulp.dest(dirs.dist.js))
 			.pipe(gulp.dest(dirs.docs.lib));
 	} else {
