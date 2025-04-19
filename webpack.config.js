@@ -37,7 +37,7 @@ module.exports = {
 	},
 	optimization: {
 		minimizer: [new TerserPlugin({
-			sourceMap: false,
+			// sourceMap: false,
 			terserOptions: {
 				compress: true,
 				keep_fnames: true,

@@ -22,7 +22,7 @@ describe('bulmaCollapsible', () => {
 
 	beforeAll(async () => {
 		jest.setTimeout(timeout);
-		page = await global.__BROWSER__.newPage();
+		page = await browser.newPage();
 	});
 
 	beforeEach(async () => {
